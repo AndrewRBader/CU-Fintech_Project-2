@@ -84,7 +84,7 @@ def track_data(search):
     # Encode Genre
     for i in ['boy band',
         'country', 'dance/electronic', 'else', 'funk', 'hip hop', 'house',
-        'indie', 'k-pop', 'latin', 'metal', 'opm', 'pop', 'r&b/soul',
+        'indie', 'k-pop', 'latin', 'metal', 'pop', 'r&b/soul',
         'rap', 'reggaeton', 'rock', 'trap']:
         song_series[i]=0
         if i in song_series['Genre']:
