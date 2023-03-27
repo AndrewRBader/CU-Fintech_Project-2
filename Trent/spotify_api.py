@@ -4,13 +4,13 @@ from spotipy.oauth2 import SpotifyClientCredentials
 cid = '2e639605ae5a4c90a78c696c07e7d982'
 secret = '3ddb3f4704d4426d9c625dc0b7d19d92'
 client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
-sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 import pandas as pd
 def track_data(search):
     
     # Get search results
-    search_result=sp.search('{}'.format(search),type='track')
+    search_result=spotify.search('{}'.format(search),type='track')
     
     # Parse search results to retrieve the track URI and artist URI
     track_uri=track_uri=search_result['tracks']['items'][0]['uri']
@@ -31,9 +31,9 @@ def track_data(search):
     }
     
     # Gather track and artist info
-    song_stats=sp.track(track_uri)
-    artist_stats=sp.artist(artist_uri)
-    audio_features=sp.audio_features(tracks=[track_uri])
+    song_stats=spotify.track(track_uri)
+    artist_stats=spotify.artist(artist_uri)
+    audio_features=spotify.audio_features(tracks=[track_uri])
     
     # Populate song_dict with all relevant data
     song_dict={}
@@ -49,7 +49,6 @@ def track_data(search):
         del audio_features[0][i]
     song_dict.update(audio_features[0])
     song_dict['Artist_followers']=song_dict['Artist_followers']['total']
-    song_dict['Genre']=song_dict['Genre'][1]
     
     # Renaming values to match our dataframe
     song_dict['liveliness']=song_dict['liveness']
@@ -88,7 +87,7 @@ def track_data(search):
         'indie', 'jazz', 'k-pop', 'latin', 'metal', 'opm', 'pop', 'r&b/soul',
         'rap', 'reggae', 'reggaeton', 'rock', 'trap']:
         song_series[i]=0
-        if song_series['Genre']==i:
+        if i in song_series['Genre']:
             song_series[i]=1
     song_series=song_series.drop('Genre')
     df = song_series.to_frame().T
