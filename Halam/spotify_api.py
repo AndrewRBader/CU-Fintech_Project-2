@@ -82,10 +82,10 @@ def track_data(search):
     song_series=song_series.drop('Album/Single')
 
     # Encode Genre
-    for i in ['bolero', 'boy band',
+    for i in ['boy band',
         'country', 'dance/electronic', 'else', 'funk', 'hip hop', 'house',
-        'indie', 'jazz', 'k-pop', 'latin', 'metal', 'opm', 'pop', 'r&b/soul',
-        'rap', 'reggae', 'reggaeton', 'rock', 'trap']:
+        'indie', 'k-pop', 'latin', 'metal', 'opm', 'pop', 'r&b/soul',
+        'rap', 'reggaeton', 'rock', 'trap']:
         song_series[i]=0
         if i in song_series['Genre']:
             song_series[i]=1
