@@ -91,5 +91,6 @@ def track_data(search):
         if song_series['Genre']==i:
             song_series[i]=1
     song_series=song_series.drop('Genre')
+    df = song_series.to_frame().T
     
-    return song_series
+    return df
