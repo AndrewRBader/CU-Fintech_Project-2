@@ -1,13 +1,18 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-
-cid = '2e639605ae5a4c90a78c696c07e7d982'
-secret = '3ddb3f4704d4426d9c625dc0b7d19d92'
-client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
-spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
-
 import pandas as pd
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+cid=os.getenv('cid')
+secret=os.getenv('secret')
+
 def track_data(search):
+
+    # Start the connection with the API
+    client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
+    spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
     
     # Get search results
     search_result=spotify.search('{}'.format(search),type='track')
