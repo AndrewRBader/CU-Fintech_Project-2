@@ -1,5 +1,7 @@
 # Spotify Popularity Predictor
 
+This model was created to facilitate the process for record companies in deciding which artist/song would make it top 50 on Spotify. 
+
 # Installation Instructions
 To clone and use:
 1) make a local directory for this github repository
@@ -14,9 +16,15 @@ To clone and use:
     pip install -U scikit-learn
     pip install spotipy 
 
-6) open final_compiled_notebook.ipynb Jupyter Notebook
-7) run the file
-8) choose song of interest in code block 40 and run blocks 40, 41, 42, 43 for a prediction if in top 50 or not
+6) Get your spotify api keys from the [spotify developer dashboard](https://developer.spotify.com/dashboard)
+7) Add your keys to a file named .env in the root directory formatted as:
+    ```
+    cid = 'client id'
+    secret = 'secret key'
+    ```
+8) open final_compiled_notebook.ipynb Jupyter Notebook
+9) run the file
+10) choose song of interest in code block 31 and run blocks 31, 32, 33 for a prediction if in top 50 or not
 
 # Background of Record Labels and A&R Recruitment 
 
@@ -42,11 +50,13 @@ We built our final model using an **ensemble** approach. We began by testing sev
  In our final model we wanted a high accuracy with consistent performance across the unpopular and the hit songs. We chose the five best performing models to ensemble together to create our final model. The ensemble model is a voting classifier with each voter getting equal weight. The models we ensembled together for the Voting Classifier are SVM, Decision Tree, Random Forest, AdaBoost, and Gradient Boost. Three of these are more advanced ensemble models. AdaBoost and Gradient Boost take different approaches to force the model to focus more on the instances that are difficult to classify. Random Forest is an ensemble of Decision Tree models that work on different parts of the data. Looking at the weights of the features we found that Artist followers was the most influential column. After that, Danceability, tempo, and duration are the most important features in the success of the song.
 
 # API
-We used the *spotipy* module in python to interact with the Spotify api. We created our own module which is implemented in the final notebook which will gather data about the song that we enter in the search and format that data to match our original dataframe. This way we can run that song through the model to test it on newer songs. 
+We used the *spotipy* module in python to interact with the Spotify api. 
+
+We created our own module which is implemented in the final notebook which will gather data about the song that we enter in the search and format that data to match our original dataframe. This way we can run that song through the model to test it on newer songs. 
 
 If you'd like to test with different songs, you only need to change the **"song"** variable. Enter any song/artist, and it'll grab the data using Spotify API. 
 
-*Note : The dataset is based on song charts 2017-2020, and therefore the model works best with song trends from this time period. 
+**Note** : The dataset is based on song charts 2017-2020, and therefore the model works best with song trends from this time period. 
 
 
 # Visualizations
