@@ -14,6 +14,7 @@ Code developed by Andrew Bader, Trent Ransom, Halam Kim, and Max Accurso
     - b. [Models](#Models)
     - c. [API](#API)
     - d. [Visualizations](#Visualizations)
+    - e. [Data Sources](#Sources)
 
 ## 1. Installation Instructions <a name="Installation"></a>
 To clone and use:
@@ -136,3 +137,10 @@ Below, you will find box plots displaying the most important features stated abo
 ![Correlation Matrix Heatmap](plots-and-images/features_correlation_matrix.png)
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+
+### e. Data Sources <a name="Sources"></a>
+
+1. Kaggle Dataset (https://www.kaggle.com/datasets/pepepython/spotify-huge-database-daily-charts-over-3-years)
+2. Spotify API (https://developer.spotify.com/documentation/web-api)
+3. IFPI Music Ecosystem (https://powering-the-music-ecosystem.ifpi.org/)
+4. Record Label and A&R Info (https://smartistu.com/all-you-need-to-know-about-record-label-ar/)
