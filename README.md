@@ -28,7 +28,6 @@ To clone and use:
     pip install pathlib
     pip install -U scikit-learn
     pip install spotipy 
-
     ```
 6) get your spotify api keys from the [spotify developer dashboard](https://developer.spotify.com/dashboard)
 7) add your keys to a file named .env in the root directory formatted as:
