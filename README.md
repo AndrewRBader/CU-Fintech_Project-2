@@ -77,7 +77,7 @@ Labels are more focused on the business side of music and less involved in the c
 
 ## 6. Our Product <a name="Product"></a>
 
-Our AI-powered product leverages structured data to provide a cutting-edge visualization of an artist's potential. By accurately predicting a song's likelihood to break into the top 50 hits in the USA with 75% accuracy, our model aims to be the first to discover the next big thing in music. 
+Our product leverages structured data to provide a cutting-edge visualization of an artist's potential. By accurately predicting a song's likelihood to break into the top 50 hits in the USA with 75% accuracy, our model aims to be the first to discover the next big thing in music. 
 
 Our team recognizes the significance of signing artists, given the substantial amount of capital that labels must deploy and the considerable time and effort involved in the process. We strive to assist A&R departments by efficiently sorting through millions of up-and-coming artists and projecting the musician's potential success accurately. By achieving these objectives, our model mitigates the risk taken on by labels and ensures a calculated risk that will pay off in the long run.
 
@@ -99,7 +99,7 @@ We built our final model using an **ensemble** approach. We began by testing sev
 - Adaptive Boosting Classifier
 - Gradient Boosting Classifier
  
-In our final model we wanted high accuracy with consistent performance across the unpopular and the hit songs. We chose the five best performing models to ensemble together to create our final model. The ensemble model is a voting classifier with each voter getting equal weight. The models we ensembled together for the Voting Classifier are SVM, Decision Tree, Random Forest, AdaBoost, and Gradient Boost. Three of these are more advanced ensemble models. AdaBoost and Gradient Boost take different approaches to force the model to focus more on the instances that are difficult to classify. Random Forest is an ensemble of Decision Tree models that work on different parts of the data. Looking at the weights of the features we found that Artist followers was the most influential column. After that, Danceability, tempo, and duration are the most important features in the success of the song.
+In our final model we wanted high accuracy with consistent performance across the unpopular and the hit songs. We chose the five best performing models to ensemble together to create our final model. The ensemble model is a voting classifier with each voter getting equal weight. The models we ensembled together for the Voting Classifier are SVM, Decision Tree, Random Forest, AdaBoost, and Gradient Boost. Three of these are more advanced ensemble models. AdaBoost and Gradient Boost take different approaches to force the model to focus more on the instances that are difficult to classify. Random Forest is an ensemble of Decision Tree models that work on different parts of the data. Looking at the weights of the features we found that Artist followers was the most influential column. After that, danceability, tempo, and duration are the most important features in the success of the song.
 
 ### c. API <a name="API"></a>
 
