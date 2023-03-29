@@ -2,9 +2,6 @@ Files in 'Andrew' Directory
 
 USA_test-data-prep-work.ipynb: set up the initial US Spotify Data set for ML models
 
-top-50-US_visualisation.ipynb: the project file where all of the feature visuals were generated from
-
-other-sampling-techniques: directory with other tested methods
 - top-10_data-trimming-resampling-work.ipynb
     - top 10 data was very imbalanced so needed random resampling
     - also applied statistical trimming techniques on the features
