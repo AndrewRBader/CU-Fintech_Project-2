@@ -22,15 +22,16 @@ To clone and use:
 3) cd into cloned repo
 4) activate conda development environment
 5) install necessary dependencies via the following commands:
-
+    ```
     pip install pandas
     pip install numpy
     pip install pathlib
     pip install -U scikit-learn
     pip install spotipy 
 
-6) Get your spotify api keys from the [spotify developer dashboard](https://developer.spotify.com/dashboard)
-7) Add your keys to a file named .env in the root directory formatted as:
+    ```
+6) get your spotify api keys from the [spotify developer dashboard](https://developer.spotify.com/dashboard)
+7) add your keys to a file named .env in the root directory formatted as:
     ```
     cid = 'client id'
     secret = 'secret key'
